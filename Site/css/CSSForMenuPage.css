@@ -1,0 +1,89 @@
+body, html{
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+}
+
+.header p {
+    margin:0;
+    font-style: italic;
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    background-color: darkgray;
+    font-size: 24px;
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    color: white;
+}
+.container{
+    display: flex;
+    height: 92%;
+    justify-content: space-around;
+    align-items: center;
+    background-image: url("../img/menu-background-image2.jpg");
+}
+.menu{
+    font-size: 24px;
+    color: white;
+    width: 30%;
+    height: 60%;
+    text-align: center;
+    border-radius: 100px;
+}
+.left-item{
+    background-image: url("../img/info.jpg");
+    background-repeat: no-repeat;
+}
+.center-item{
+    background-image: url("../img/structure-background-image2.jpg");
+    background-repeat: no-repeat;
+}
+.right-item{
+    background-image: url("../img/simulator-background-image.jpg");
+    background-repeat: no-repeat;
+}
+.fon{
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 100px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+.fon:hover .info-menu{
+    margin-top: -5%;
+    transition: all .3s linear;
+}
+
+@media screen and (max-width: 1020px) {
+    .menu{
+        height: 50%;
+    }
+}
+
+@media screen and (max-width:850px) {
+    .menu{
+        height: 40%;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .container{
+        flex-direction: column;
+        height: 180%;
+    }
+    .menu{
+        width: 75%;
+        margin-top: 5%;
+    }
+}

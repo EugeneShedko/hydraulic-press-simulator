@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Структура установки </title>
+    <link rel="stylesheet" href="../css/CSSForStructure.css" TYPE="text/css">
+    <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
+    <script src="rgpnanproldzhs.js?1635111012321"></script>
+    <script>
+        var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
+        function init() {
+            canvas = document.getElementById("canvas");
+            anim_container = document.getElementById("animation_container");
+            dom_overlay_container = document.getElementById("dom_overlay_container");
+            var comp=AdobeAn.getComposition("F7C9A542000EBF4DAAFFC3085EAE5C24");
+            var lib=comp.getLibrary();
+            var loader = new createjs.LoadQueue(false);
+            loader.installPlugin(createjs.Sound);
+            loader.addEventListener("fileload", function(evt){handleFileLoad(evt,comp)});
+            loader.addEventListener("complete", function(evt){handleComplete(evt,comp)});
+            var lib=comp.getLibrary();
+            loader.loadManifest(lib.properties.manifest);
+        }
+        function handleFileLoad(evt, comp) {
+            var images=comp.getImages();
+            if (evt && (evt.item.type == "image")) { images[evt.item.id] = evt.result; }
+        }
+        function handleComplete(evt,comp) {
+            //This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+            var lib=comp.getLibrary();
+            var ss=comp.getSpriteSheet();
+            var queue = evt.target;
+            var ssMetadata = lib.ssMetadata;
+            for(i=0; i<ssMetadata.length; i++) {
+                ss[ssMetadata[i].name] = new createjs.SpriteSheet( {"images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames} )
+            }
+            exportRoot = new lib.rgpnanproldzhs();
+            stage = new lib.Stage(canvas);
+            stage.enableMouseOver();
+            //Registers the "tick" event listener.
+            fnStartAnimation = function() {
+                stage.addChild(exportRoot);
+                createjs.Ticker.framerate = lib.properties.fps;
+                createjs.Ticker.addEventListener("tick", stage);
+            }
+            //Code to support hidpi screens and responsive scaling.
+            AdobeAn.makeResponsive(false,'both',false,1,[canvas,anim_container,dom_overlay_container]);
+            AdobeAn.compositionLoaded(lib.properties.id);
+            fnStartAnimation();
+        }
+        function playSound(id, loop) {
+            return createjs.Sound.play(id, {'interrupt':createjs.Sound.INTERRUPT_EARLY, 'loop': loop});}
+    </script>
+</head>
+<body onload="init();">
+<div class="header">
+    <p>Web-дизайн и разработка мультимедийных изданий</p>
+    <p>Принцип работы гидравлического пресса</p>
+</div>
+<div class="container">
+    <a class="button" href="MenuPage.html"> Меню </a>    
+<div style="border-bottom: 4px darkgray solid; margin-bottom: 15px;">
+    <figure>
+        <img class="press" src="../img/background_image.jpg">
+        <figcaption> Рис.1 - Гадравлический пресс </figcaption>
+    </figure>
+    <a name="karta"> </a>
+</div>
+<div style="display:flex;justify-content:center">
+<div id="animation_container" >
+        <canvas id="canvas"  ></canvas>
+        <div id="dom_overlay_container" >
+        </div>
+</div>
+</div>
+    <p style="font-style: italic;text-align: center;font-size: 16px;"> Рис.2 - Озвученная карта установки</p>
+    <div class="device-map-container">
+        <div style="margin-top: 50px;font-size: 20px;text-align: justify;padding: 0% 2%">
+            Список основных элементов гидравличесского пресса:
+            <ul id="list">
+                <li id="src1"> Блок большого цилиндра </li>
+                <li id="src2"> Большой металлический поршень </li>
+                <li id="src3"> Металлическая рама </li>
+                <li id="src4"> Прозрачная пластина </li>
+                <li id="src5"> Рычаг перемещения поршня </li>
+                <li id="src6"> Манометр </li>
+                <li id="src7"> Емкость с маслом </li>
+                <li id="src8"> Блок малого цилиндра </li>
+                <li id="src9"> Малый металлический поршень </li>
+                <li id="src10"> Впускной клапан </li>
+                <li id="src11"> Нагнетательный клапан </li>
+                <li id="src12"> Узел сброса давления </li>
+                <li id="src13"> Сдавливающая платформа </li>
+            </ul>
+        </div>
+        <div class="device-map-elements">
+
+с        </div>
+    </div>
+    <div class="device-map-elements" style="margin: 50px auto 0">
+        <a name="work"> </a>
+       <video src="../img/ustanovka.mp4" controls="controls"/>
+    </div>
+</div>
+</div>
+<script src="../js/JSForStructure.js"></script>
+</body>
+</html>

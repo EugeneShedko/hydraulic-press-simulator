@@ -1,0 +1,46 @@
+body, html{
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+}
+
+.header p {
+    margin:0;
+    font-style: italic;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    background-color: darkgray;
+    font-size: 24px;
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    color: white;
+}
+
+.container
+{
+    width: 70%;
+    margin: 80px 15% 0;
+}
+.text
+{
+    margin-top: 20px;
+    font-size: 20px;
+    text-align: justify;
+}
+
+.image
+{
+    margin-top: 20px;
+    width: 1050px;
+    height: 500px;
+}
+
+p{
+    text-align: center;
+    font-style: italic;
+}

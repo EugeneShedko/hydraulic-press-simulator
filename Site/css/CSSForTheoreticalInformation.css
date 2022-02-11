@@ -1,0 +1,332 @@
+
+body, html{
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+}
+
+.header p {
+    margin:0;
+    font-style: italic;
+
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    background-color: darkgray;
+    font-size: 24px;
+    text-align: center;
+    width: 100%;
+    color: white;
+    z-index: 999;
+}
+
+#content {
+    height: 85%;
+    background-color: #f5f5f5;
+    justify-content: center;
+    align-items: center;
+    overflow: scroll;
+    overflow-x: hidden;
+    z-index: 99999;
+}
+
+#content .Title {
+    padding: 10px;
+    text-align: center;
+    font-size: 4vh;
+    color: limegreen;
+    font-weight: bold;
+}
+
+#content .text {
+    padding-left: 20px;
+    padding-right: 10px;
+    font-size: 3vh;
+    color: limegreen;
+
+}
+
+#OpenButton{
+    border-radius: 3px;
+    color: white;
+    background-color: limegreen;
+    border-radius: 40px;
+    width: 50px;
+    height: 50px;
+    font-size: 50px;
+    position: fixed;
+    right: 30px;
+    bottom: 70px;
+    z-index: 9999999;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+#Helper{
+    visibility: hidden;
+    position: fixed;
+    right: 20px;
+    bottom: 10vh;
+    width: 17vw;
+    height: 54vh;
+    z-index: 999999;
+}
+
+#HelperHeader{
+    font-size: 23px;
+    color: limegreen;
+    background-color: white;
+    height: 7vh;
+    border: 5px solid limegreen;
+    border-bottom: none;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#CloseButton{
+    background-color: limegreen;
+    border-radius: 20px;
+    position: absolute;
+    right: 10px;
+    height:5vh;
+}
+
+#HelperBody{
+    background-color: white;
+    height: 40vh;
+    border: 5px solid LimeGreen;
+    color: LimeGreen;
+}
+
+#HelperBottom{
+    background-color: white;
+    border: 5px solid limegreen;
+    border-top: none;
+    height: 7vh;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#Chat{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#Chat input{
+    font-size: 2vh;
+    border:1px solid limegreen;
+    border-radius: 5px;
+    border: none;
+    margin: 2px;
+    height: 5vh;
+    width: 12vw;
+}
+
+#Chat img{
+    position: absolute;
+    right: 4.5vw;
+    height: 4vh;
+}
+
+#EnterButton{
+    border:3px solid limegreen;
+    color:limegreen;
+    border-radius: 5px;
+    background-color: transparent;
+    font-size: 2vh;
+    height: 5vh;
+    width: 5vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 3px;
+    cursor: pointer;
+}
+
+#HelperBody{
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+}
+
+.question{
+    margin: 3px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+
+}
+
+.answer{
+    margin: 3px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.question div{
+    padding: 5px;
+    width:70%;
+    border-radius: 5px;
+    border: 3px solid limegreen;
+    background-color: white;
+    color: limegreen;
+    font-size: 19px;
+}
+
+.answer div{
+    padding: 5px;
+    width:70%;
+    border-radius: 5px;
+    border: 3px solid red;
+    background-color: white;
+    color: red;
+    font-size: 19px;
+}
+
+#input_string
+{
+    color: limegreen;
+    outline: none;
+}
+
+.answer div img{
+    width: 100%;
+}
+.answer div embed{
+    width: 100%;
+}
+.answer audio{
+    width: 100%;
+    height: 30px;
+}
+
+.button{
+    display: block;
+    border: 3px solid darkgray;
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    color: darkgray;
+    font-size: 22px;
+    margin-top: 2%;
+    text-decoration: none;
+    transition: all 0.5s ease;
+}
+.button:hover{
+    background-color: darkgray;
+    color: white;
+}
+
+.container{
+    padding: 0 5%;
+    margin-top: 50px;
+}
+.text{
+    font-size: 20px;
+    text-align: justify;
+}
+.formula{
+    font-size: 20px;
+    display: inline;
+    margin-left: 45%;
+    font-weight: bold;
+}
+.formula:hover{
+    cursor: pointer;
+}
+figure{
+    /*display: flex;
+    flex-direction: column;*/
+    padding: 0;
+    margin: 0;
+}
+figcaption{
+    text-align: center;
+    font-style: italic;
+}
+img{
+    display: block;
+    margin: auto auto;
+}
+img:hover{
+    cursor: pointer;
+}
+span{
+    font-weight: bold;
+}
+span:hover {
+    color: red;
+}
+
+.change{
+    cursor: pointer;
+}
+
+ul{
+    font-size: 20px;
+}
+li{
+    margin-bottom: 3px;
+}
+
+
+@media screen and (max-width: 900px){
+    .press-principal{
+        width: 500px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
